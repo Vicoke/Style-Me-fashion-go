@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation - Style Me</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Center everything */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form container */
+        .box {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Form layout */
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        #success-message {
+            margin-top: 15px;
+            color: green;
+        }
+
+        /* WhatsApp button */
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            background: green;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background: darkgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Book a Reservation</h1>
+
+<form onsubmit="submitForm(event)">
+    
+    <label>Full Name:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="email" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" required>
+
+    <label>Date:</label>
+    <input type="date" required>
+
+    <label>Time:</label>
+    <input type="time" required>
+
+    <label>Message:</label>
+    <textarea></textarea>
+
+    <button type="submit">Book Now</button>
+
+</form>
+
+<p id="success-message"></p>
+
+<a href="https://wa.me/2348059363201?text=Hello%20I%20want%20to%20book%20a%20reservation" target="_blank">
+    Book via WhatsApp
+</a>
+
+</div>
+
+<script>
+function submitForm(e) {
+    e.preventDefault();
+    document.getElementById("success-message").innerText =
+        "✅ Reservation submitted successfully!";
+}
+</script>
+
+</body>
+</html>
