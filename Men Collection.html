@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men Collection - Style Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Men’s Collection</h1>
+    <p>Explore our latest men’s fashion styles.</p>
+
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="men 1.jpeg" alt="Buda Dress">
+            <h3>Buda</h3>
+            <p>₦90,000</p>
+            <p>This is perfect for parties and special occasions. Made with high-quality fabric for comfort and style.</p>
+            <button onclick="addToCart('Buda', 90000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="men 3.jpeg" alt="Mega Dress">
+            <h3>Mega Dress</h3>
+            <p>₦85,000</p>
+            <p>This is the best outfit for every occasion, specially designed for you.</p>
+            <button onclick="addToCart('Mega Dress', 85000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="men 9.jpeg" alt="202 White Suit">
+            <h3>202 White Suit</h3>
+            <p>₦94,000</p>
+            <p>You can't afford to miss this glorious dress; purchase it on discount now.</p>
+            <button onclick="addToCart('202 White Suit', 94000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="men 8.jpeg" alt="202 Dress">
+            <h3>202 Dress</h3>
+            <p>₦94,000</p>
+            <p>You can't afford to miss this glorious dress; purchase it on discount now.</p>
+            <button onclick="addToCart('202 Dress', 94000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="men 4.jpeg" alt="Canva Super">
+            <h3>Canva Super</h3>
+            <p>₦100,000</p>
+            <p>This is the best dressing for every occasion.</p>
+            <button onclick="addToCart('Canva Super', 100000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product">
+            <img src="men 5.jpeg" alt="Designer Dress">
+            <h3>Designer Dress</h3>
+            <p>₦150,000</p>
+            <p>This is the dressing purely classic for men.</p>
+            <button onclick="addToCart('Designer Dress', 150000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="men 7.jpeg" alt="Danana Suit">
+            <h3>Danana Suit</h3>
+            <p>₦180,000</p>
+            <p>This elegant red suit is perfect for parties and special occasions.</p>
+            <button onclick="addToCart('Danana Suit', 180000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="men 6.jpeg" alt="Towana Juga">
+            <h3>Towana Juga</h3>
+            <p>₦180,000</p>
+            <p>This is perfect for parties and special occasions.</p>
+            <button onclick="addToCart('Towana Juga', 180000)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Cart</h2>
+    <ul id="cart-list"></ul>
+    <button onclick="displayCart()">View Cart</button>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({name: name, price: price});
+            alert(name + " added to cart!");
+            console.log(cart);
+        }
+
+        function displayCart() {
+            let list = document.getElementById("cart-list");
+            list.innerHTML = "";
+
+            cart.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = item.name + " - ₦" + item.price.toLocaleString();
+                list.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>

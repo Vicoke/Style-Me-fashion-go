@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men Collection - Style Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Women’s Collection</h1>
+    <p>Explore our latest Women’s fashion styles.</p>
+
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="image 8.jpeg" alt="Camara Dress">
+            <h3>Camara Dress</h3>
+            <p>₦90,000</p>
+            <p>This is perfect for wedding, parties and special occasions. Made with high-quality fabric for comfort and style.</p>
+            <button onclick="addToCart('Camara', 90000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="image 9.jpeg" alt="Super Mento">
+            <h3>Super Mento</h3>
+            <p>₦85,000</p>
+            <p>This is the best outfit for every occasion, specially designed for you.</p>
+            <button onclick="addToCart('Super Mento', 85000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="image15.jpeg" alt="Elegant red gown">
+            <h3>Elegant Red Gowm</h3>
+            <p>₦94,000</p>
+            <p>You can't afford to miss this glorious dress; purchase it on discount now.</p>
+            <button onclick="addToCart('Elegant Red Gown', 94000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="image 17.jpeg" alt="">Lady Mafia Suit
+            <h3>Lady Mafia Suit</h3>
+            <p>₦94,000</p>
+            <p>You can't afford to miss this glorious dress; purchase it on discount now.</p>
+            <button onclick="addToCart('Lady Mafia Suit', 94000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="women 4.jpeg" alt="Canana Super">
+            <h3>Canana Super Dress</h3>
+            <p>₦100,000</p>
+            <p>This is the best dressing for every occasion.</p>
+            <button onclick="addToCart('Canana Super Dress', 100000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product">
+            <img src="wardrop.jpeg" alt="Designer Dress">
+            <h3>Wardrop collection</h3>
+            <p>₦150,000</p>
+            <p>This is the dressing purely classic for men.</p>
+            <button onclick="addToCart('Wardrop collection', 150000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="image 20.jpeg" alt="Danana Suit">
+            <h3>Danana Blue Suit</h3>
+            <p>₦180,000</p>
+            <p>This elegant Blue suit is perfect for parties and special occasions.</p>
+            <button onclick="addToCart('Danana Blue Suit', 180000)">Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="image 24.jpeg" alt="Jugular">
+            <h3>Jugular</h3>
+            <p>₦180,000</p>
+            <p>This is perfect for parties and special occasions.</p>
+            <button onclick="addToCart('Jugular', 180000)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Cart</h2>
+    <ul id="cart-list"></ul>
+    <button onclick="displayCart()">View Cart</button>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({name: name, price: price});
+            alert(name + " added to cart!");
+            console.log(cart);
+        }
+
+        function displayCart() {
+            let list = document.getElementById("cart-list");
+            list.innerHTML = "";
+
+            cart.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = item.name + " - ₦" + item.price.toLocaleString();
+                list.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>
